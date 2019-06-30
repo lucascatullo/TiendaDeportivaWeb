@@ -1,0 +1,32 @@
+﻿<div class="navbar bg-dark">
+    <a class="navbar-brand text-white">Tienda Deportiva</a>
+</div>
+
+<h2 class="text-center mt-1">Paso 1: Tus detalles</h2>
+
+<form novalidate #detailsForm="ngForm">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input #nombre="ngModel" name="nombre" class="form-control"
+               [(ngModel)]="orden.nombre" required />
+        <div *ngIf="nombre.invalid" class="text-danger">
+            Por favor, ingrese su nombre.
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Direccion</label>
+        <input #direccion="ngModel" name="direccion" class="form-control"
+               [(ngModel)]="orden.direccion" required />
+        <div *ngIf="direccion.invalid" class="text-danger">
+            Por favor, ingrese su dirección.
+        </div>
+    </div>
+    <div class="text-center pt-2">
+        <button class="btn btn-outline-primary" routerLink="/carrito">Atras</button>
+        <button class="btn btn-danger"
+                [disabled]="detailsForm.invalid" 
+                routerLink="/checkout/paso2">
+            Siguiente
+        </button>
+    </div>     
+</form>

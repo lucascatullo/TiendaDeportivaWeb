@@ -1,0 +1,17 @@
+﻿<h2 class="text-center">Sumario</h2>
+
+<div class="container">
+    <table class="table-2">
+        <tr><th>Nombre</th><td>{{orden.nombre}}</td></tr>
+        <tr><th>Dirección</th><td>{{orden.direccion}}</td></tr>
+        <tr><th>Productos</th><td>{{orden.carrito.itemCount}}</td></tr>
+        <tr>
+            <th>Precio total</th>
+            <td>{{orden.carrito.precioTotal | currency:USD:true}}</td>
+        </tr>
+    </table>
+    <div class="text-center pt-2">
+        <button class="btn btn-outline-primary" routerLink="/checkout/paso2">Atras</button>
+        <button class="btn btn-danger" (click)="presentarOrden()">Presentar Orden</button>
+    </div>
+</div>

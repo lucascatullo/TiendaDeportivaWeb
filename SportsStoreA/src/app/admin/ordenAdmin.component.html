@@ -1,0 +1,51 @@
+﻿
+
+
+<table *ngIf="ordenes?.length>0; else nodata" class="table table-striped">
+    <tr>
+        <th>Cliente</th><th>Dirección</th><th>Productos</th><th>Total</th><th></th>
+    </tr>
+    <tr *ngFor="let orden of ordenes">
+        <td>{{orden.nombre}}</td>
+        <td>{{orden.direccion}}</td>
+        <td>{{orden?.productos?.length}}</td>
+        <td>{{orden?.pago?.total}}</td>
+        <td *ngIf="!orden.embarcado; else embarcado">
+            <button class="btn btn-sm btn-primary" (click)="marcarEmbarcado(orden)">
+                Embarcar
+            </button>
+        </td>
+    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+<ng-template #embarcado><td>Embarcado</td></ng-template>
+
+<ng-template #nodata><h3 class="text-center">No hay ordenes</h3></ng-template>

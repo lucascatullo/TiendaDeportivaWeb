@@ -1,0 +1,8 @@
+﻿<div *ngIf="paginas.length > 1" class="text-right my-2">
+    <button *ngFor="let pagina of paginas"
+            class="btn btn-primary mx-1"
+            [class.active]="current == pagina"
+            (click)="setPaginaActual(pagina)">
+        {{pagina}}
+    </button>
+</div>

@@ -1,0 +1,16 @@
+﻿<h2 class="text-center">Confirmación de orden</h2>
+
+
+<div class="container">
+    <table *ngIf="orden.confirmacionOrden; else nodata" class="table m-2">
+        <tr><th>Orden</th><td>{{orden.confirmacionOrden.ordenId}}</td></tr>
+        <tr><th>Precio</th><td>{{orden.confirmacionOrden.precioTotal}}</td></tr>
+        <tr><th>Codigo de Autenticación</th><td>{{orden.confirmacionOrden.codigoAuth}}</td></tr>
+    </table> 
+    <div class="text-center">
+        <button class="btn btn-primary" routerLink="/">Terminar</button>
+    </div>
+    <ng-template #nodata>
+        <h3 class="text-center">Presentando la orden....</h3>
+    </ng-template>
+</div>

@@ -1,0 +1,37 @@
+﻿<div class="navbar bg-dark">
+    <a class="navbar-brand text-white">Tienda deportiva</a>
+</div>
+
+<h2 class="text-center">Paso 2: Detalles de pago</h2>
+<form novalidate #pagoForm="ngForm">
+    <div class="form-group">
+        <label>Número de tarjeta</label>
+        <input #numeroTarjeta="ngModel" name="numeroTarjeta" class="form-control"
+               [(ngModel)]="orden.pago.numeroTarjeta" required />
+        <div *ngIf="numeroTarjeta.invalid" class="text-danger">
+            Por favor, ingrese un número de tarjeta valido
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Vencimiento de tarjeta</label>
+        <input #vencimientoTarjeta="ngModel" name="vencimientoTarjeta" class="form-control"
+               [(ngModel)]="orden.pago.vencimientoTarjeta" required/>
+        <div *ngIf="vencimientoTarjeta.invalid" class="text-danger">
+            por favor, ingrese un número de tarjeta valido
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Código de seguridad</label>
+        <input #codigoSeguridadTarjeta="ngModel" name="codigoSeguridadTarjeta" class="form-control"
+               [(ngModel)]="orden.pago.codigoSeguridadTarjeta" required />
+        <div *ngIf="codigoSeguridadTarjeta.invalid" class="text-danger">
+            Por favor, ingrese un código de seguridad valido
+        </div>
+    </div>
+    <div class="text-center pt-2">
+        <button class="btn btn-outline-primary" routerLink="/checkout/paso1">Atras</button>
+        <button class="btn btn-danger" [disabled]="pagoForm.invalid" routerLink="/checkout/paso3">
+            Siguiente
+        </button>      
+    </div>
+</form>

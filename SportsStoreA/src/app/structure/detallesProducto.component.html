@@ -1,0 +1,15 @@
+﻿<table class="table table-bordered">
+    <tr><th colspan="2" class="bg-info">Producto</th></tr>
+    <tr><th>Nombre</th><td>{{producto?.nombre || 'No hay datos.'}}</td></tr>
+    <tr><th>Categoria</th><td>{{producto?.categoria || 'No hay datos'}}</td></tr>
+    <tr><th>Precio</th><td>{{producto?.precio || 'No hay datos'}}</td></tr>
+    <tr><th>Descripcion</th><td>{{producto?.descripcion || 'No hay datos'}}</td></tr>
+
+    <tr><th colspan="2" class="bg-danger">Proveedor</th></tr>
+    <tr><th>Nombre</th><td>{{producto?.proveedor?.nombre || 'No hay datos'}}</td></tr>
+    <tr><th>Provincia</th><td>{{producto?.proveedor?.ciudad || 'No hay datos'}}</td></tr>
+    <tr><th>Ciudad</th><td>{{producto?.proveedor?.provincia || 'No hay datos'}}</td></tr>   
+</table>
+<div class="text-center">
+    <button class="btn btn-primary" routerLink="/tabla">Volver</button>
+</div>

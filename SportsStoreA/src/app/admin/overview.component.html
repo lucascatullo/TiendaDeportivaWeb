@@ -1,0 +1,13 @@
+﻿<table class="table m-1">
+    <tr>
+        <td>Hay {{productos?.length || 0}} productos a la venta.</td>
+        <td>
+            <button class="btn btn-sm btn-info btn-block" routerLink="/admin/productos">Administrar productos</button>
+        </td>
+        <td>
+            Hay {{ordenes?.length || 0}} ordenes
+            <button class="btn btn-sm btn-info btn-block"
+                    routerLink="/admin/ordenes"></button>
+        </td>
+    </tr>
+</table>

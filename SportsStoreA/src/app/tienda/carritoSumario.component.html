@@ -1,0 +1,16 @@
+﻿<div class="text-right p-1">
+    <small *ngIf="itemCount>0; else empty" class="text-white">
+       ( {{itemCount}} Item(s) {{precioTotal | currency:"USD":true}})
+    </small>
+    <button class="btn btn-sm ml-1"
+            [disabled]="itemCount==0"
+            routerLink="/carrito">
+        <i class="fa fa-shopping-cart" ></i>
+    </button>
+</div>
+
+<ng-template #empty>
+    <small class="text-muted">
+        Carrito esta vacio
+    </small>
+</ng-template>

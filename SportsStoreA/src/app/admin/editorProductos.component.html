@@ -1,0 +1,26 @@
+﻿
+
+
+<div class="form-group">
+    <label>Nombre</label>
+    <input class="form-control" [(ngModel)]="producto.nombre" />
+</div>
+<div class="form-group">
+    <label>Categoria</label>
+    <input class="form-control" [(ngModel)]="producto.categoria" />
+</div>
+<div class="form-group">
+    <label>Proveedor</label>
+    <select class ="form-control" [(ngModel)]="producto.proveedor"
+                 [compareWith]="compararProveedores" >
+     <option *ngFor="let p of proveedores" [ngValue]="p">{{p.nombre}}</option>
+    </select>
+</div>
+<div class="form-group">
+    <label>Descripción</label>
+    <textarea class="form-control" [(ngModel)]="producto.descripcion"></textarea>
+</div>
+<div class="form-group">
+    <label>Precio</label>
+    <input class="form-control" [(ngModel)]="producto.precio" />
+</div>

@@ -1,0 +1,12 @@
+﻿<div class="m-1">
+    <button class="btn btn-outline-info btn-block"
+            (click)="setCategoriaActual(null)">
+        Todas las Categorias
+    </button>
+    <button *ngFor="let categoria of categorias"
+            class="btn btn-outline-info btn-block"
+            [class.active]="categoriaActual==categoria"
+            (click)="setCategoriaActual(categoria)">
+        {{categoria}}
+    </button>
+</div>

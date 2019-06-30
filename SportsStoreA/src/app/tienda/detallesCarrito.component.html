@@ -1,0 +1,49 @@
+﻿
+
+
+<div class="m-1">
+    <h2 class="text-center">Tu carrito</h2>
+    <table class="table table-striped table-bordered p-1">
+        <thead>
+            <tr>
+                <th>Cantidad</th><th>Producto</th>
+                <th class="text-right">Precio</th>
+                <th class="text-right">Sub total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="carrito.seleccionProducto.length == 0">
+                <td colspan="4" class="text-xs-center">
+                    Tu carrito esta vacio.
+                </td>
+            </tr>
+            <tr *ngFor="let seleccion of carrito.seleccionProducto">
+                <td>
+                    <input type="number" class="form-control-sm" style="width:5em"
+                           [(ngModel)] ="seleccion.cantidad" />
+                </td>
+                <td> {{seleccion.nombre}}</td>
+                <td class="text-right">{{seleccion.precio | currency:"USD":true:"2.2-2"}}</td>
+                <td class="text-right">{{seleccion.cantidad * seleccion.precio | currency:"USD":true:"2.2-2"}}</td>
+                <td class="text-center">
+                    <button class="btn btn-danger btn-sm"
+                            (click)="carrito.updateCantidad(seleccion.productoId, 0)">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total: </td>
+                <td class="text-right">{{carrito.precioTotal | currency:"USD":true:"2.2-2"}}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="text-center">
+    <button class="btn btn-primary" routerLink="/tienda">Continuar comprando</button>
+    <button class="btn btn-primary" routerLink="/checkout/paso1" [disabled]="carrito.seleccionProducto.length == 0">
+        Checkout
+    </button>
+</div>

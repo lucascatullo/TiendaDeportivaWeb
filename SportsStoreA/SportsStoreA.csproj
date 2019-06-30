@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
+    <TypeScriptEmitDecoratorMetadata>True</TypeScriptEmitDecoratorMetadata>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="src\app\admin\admin.component.ts" />
+    <None Remove="src\app\admin\admin.module.ts" />
+    <None Remove="src\app\admin\editorProductos.component.ts" />
+    <None Remove="src\app\admin\ordenAdmin.component.ts" />
+    <None Remove="src\app\admin\overview.component.ts" />
+    <None Remove="src\app\admin\productoAdmin.component.ts" />
+    <None Remove="src\app\auth\autenticacion.component.ts" />
+    <None Remove="src\app\auth\autenticacion.guard.ts" />
+    <None Remove="src\app\auth\autenticacion.service.ts" />
+    <None Remove="src\app\auth\auth.module.ts" />
+    <None Remove="src\app\errorHandler.services.ts" />
+    <None Remove="src\app\models\carrito.model.ts" />
+    <None Remove="src\app\models\configClasses.repository.ts" />
+    <None Remove="src\app\models\orden.model.ts" />
+    <None Remove="src\app\structure\detallesProducto.ts" />
+    <None Remove="src\app\structure\filtroCategoria.ts" />
+    <None Remove="src\app\structure\tablaProducto.ts" />
+    <None Remove="src\app\tienda\carritoSumario.component.ts" />
+    <None Remove="src\app\tienda\checkout\checkoutDetalles.component.ts" />
+    <None Remove="src\app\tienda\checkout\checkoutPago.component.ts" />
+    <None Remove="src\app\tienda\checkout\checkoutSumario.component.ts" />
+    <None Remove="src\app\tienda\checkout\confirmarOrden.component.ts" />
+    <None Remove="src\app\tienda\detallesCarrito.component.ts" />
+    <None Remove="src\app\tienda\filtroCategoria.component.ts" />
+    <None Remove="src\app\tienda\listaProducto.component.ts" />
+    <None Remove="src\app\tienda\paginacion.component.ts" />
+    <None Remove="src\app\tienda\ratings.component.ts" />
+    <None Remove="src\app\tienda\selectorProducto.component.ts" />
+    <None Remove="src\app\tienda\tienda.module.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="src\app\models\model.module.ts" />
+    <Content Include="src\app\models\producto.model.ts" />
+    <Content Include="src\app\models\proveedor.model.ts" />
+    <Content Include="src\app\models\rating.model.ts" />
+    <Content Include="src\app\models\repository.ts" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.NET.Sdk.Razor" Version="2.2.0" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.5.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="2.1.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+</Project>
